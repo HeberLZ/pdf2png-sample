@@ -3,7 +3,6 @@
 var fs = require('fs');
 var _ = require('lodash');
 var webdriver = require('selenium-webdriver');
-//var easyimg = require('easyimage');
 var im = require("imagemagick");
 
 var browser = new webdriver.Builder().usingServer().withCapabilities({'browserName': 'firefox' }).build();

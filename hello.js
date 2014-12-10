@@ -1,22 +1,14 @@
-/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
-/* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
-
-//
-// See README for overview
-//
-
 'use strict';
 
 //
 // Fetch the PDF document from the URL using promises
 //
-var log = document.getElementById('console');
-//log.innerHTML = "Loading document<br>";
 PDFJS.getDocument('github.pdf').then(function(pdf) {
-  // Using promise to fetch the page
-  //log.innerHTML += "PDF loaded successfully, obtaining page<br>";
   pdf.getPage(1).then(function(page) {
-    //log.innerHTML += "Rendering firt page<br>";
+
+//    var inchToCmRatio = 2.54;
+//    var scaleTo = { width: 11 * inchToCmRatio, height: 17 * inchToCmRatio};
+
     var scale = 1.5;
     var viewport = page.getViewport(scale);
 
